@@ -8,6 +8,7 @@ class Recipe extends React.Component{
     render(){
         return(
         <div>
+            <img src={this.props.imgsrc} alt="Imagine delicious pic of food here."/>
             <p>{this.props.title}</p>
         </div>
         );

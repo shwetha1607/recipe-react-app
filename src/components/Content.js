@@ -9,37 +9,26 @@ class Content extends React.Component{
     json=null;
     constructor(props){
         super(props);
-        //this.state={json:null};
-        this.getRecipe=this.getRecipe.bind(this);
+        this.state={json:null};
     }
-    /*
-    async componentDidMount(){
-        await this.getRecipe();
-    }
-    */
 
-    async getRecipe(){
+    async componentWillMount(){
         try{
-            var res=await fetch(this.url_b);
-            this.setState({json:(await res.json())});
+            var res=await fetch(this.url_a);
+             this.setState({json:await res.json()});
         }catch(err){
             alert("Oops something went wrong!");
         }
     }
 
     render(){
-        //this.elements=[];
         console.log("again");
-        (async ()=>{
-            await this.getRecipe();
-            for(var i=0;i<10;i++){
-                //this.elements.push(<Recipe title={this.state.json["recipes"][i]["title"]}/>);
-                //console.log(this.elements[i]);
-                this.elements.push(<Recipe title={"You're breathtaking!"}/>);
-            }
+        if(this.state.json!==null)
+        for(var i=0;i<this.state.json["count"];i++){
+            this.elements.push(<Recipe imgsrc={this.state.json["recipes"][i]["image_url"]} title={this.state.json["recipes"][i]["title"]}/>);
+            console.log(this.elements[i]);
         }
-        )();
-        return (<div>
+        return (<div id='content'>
             {this.elements}
         </div>);
     }
