@@ -4,7 +4,7 @@ import Content from './components/Content';
 
 class App extends React.Component{
 
-  key_a="97753ac532afaee19e10e0bd53e215e4";
+  key_a="97753ac532afaee19e10e0bd53e215e4"; //over
   key_b="b0411751579e25ce6de6f05b965dba21";
   key_c="89bed7cf23be67af723ad893f9ac391f";
   key_d="a633711f01fe63ca20a580dcc42cd4eb";
@@ -19,7 +19,7 @@ class App extends React.Component{
   async componentWillMount(){
       console.log("Getting popular recipes");     
       try{
-          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_a+"&sort=r");
+          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_b+"&sort=r");
           var json = await res.json();
           console.log("json=======>",json);
           this.setState({json: json.recipes });
@@ -32,7 +32,7 @@ class App extends React.Component{
     console.log(searchWord);
     console.log("Getting popular recipes");     
       try{
-          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_e+"&q="+searchWord);
+          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_b+"&q="+searchWord);
           var json = await res.json();
           console.log("json=======>",json);
           this.setState({json: json.recipes });
