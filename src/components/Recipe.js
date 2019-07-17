@@ -6,7 +6,6 @@ function Recipe(props){
         <div key={props.recipeId}>
             <img src={props.imgsrc} alt="Imagine delicious pic of food here."/>
             <p>{props.title}</p>
-            <p>{props.recipeId}</p>
             <Link to={{pathname: `/recipe/${props.recipeId}`,state:{id:props.recipeId}}}>View Recipe</Link>
         </div>
     );
