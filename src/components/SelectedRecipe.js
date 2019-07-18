@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import '../App.css';
 
 class SelectedRecipe extends React.Component {
 
-    key_a = "97753ac532afaee19e10e0bd53e215e4";
-    key_b = "b0411751579e25ce6de6f05b965dba21";
-    key_c = "89bed7cf23be67af723ad893f9ac391f";
-    key_d = "a633711f01fe63ca20a580dcc42cd4eb";
-    key_e = "84a3fbb67dd942e588d19e2c859a3230";
-    key="0e963d79063a037ddc16fafa055bf0ee";
 
     constructor(props) {
         super(props);
         this.state = { json: null };
+        console.log("Sel");
+        this.key=process.env.REACT_APP_API_KEY;
     }
 
     async componentDidMount() {
@@ -32,21 +30,26 @@ class SelectedRecipe extends React.Component {
         if (this.state.json) {
 
             return (
-                <div>
-                    <div>
-                        <h2>{this.state.json.title}</h2>
-                        <h4>By {this.state.json.publisher}</h4>
-                        <img src={this.state.json.image_url} alt="Food" />
-                        <IngredientList list={this.state.json.ingredients} />
-                        <a href={this.state.json.source_url} target="_blank" rel="noopener noreferrer">Click here for full recipe</a>
+                <div className="app">
+                    <div className="displayed-recipe">
+                        <div>
+                            <h2>{this.state.json.title}</h2>
+                            <h5>By {this.state.json.publisher}</h5>
+                            <img className="image" src={this.state.json.image_url} alt="Food" />
+                            <div>
+                                <h7>Summary of preparation: </h7>
+                                <IngredientList list={this.state.json.ingredients} />
+                            </div>
+                            <a href={this.state.json.source_url} target="_blank" rel="noopener noreferrer"><input type="submit" className="navigation-buttons btn btn-primary" value="Click here to view recipe"/></a>
+                            <Link to="/"><input type="submit" className="navigation-buttons btn btn-light" value="Go to Homepage"/></Link>
+                        </div>
                     </div>
-                    <Link to="/">Back to Home</Link>
                 </div>
             );
         }
 
         return (
-            <p></p>
+            <div className="app"><ProgressBar animated now={100}/></div>
         );
 
     }

@@ -1,0 +1,57 @@
+.app{
+    background-color:gray;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+#page-title{
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.search-form-container{
+    text-align: center;
+}
+
+.search-form{
+    display: inline-block;
+}
+
+.search-input{
+    margin-bottom: 10px;
+}
+.search-button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.page-status{
+    text-align: center;
+    position: relative;
+    top: 20%;
+}
+
+.recipe-card{
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+}
+
+.displayed-recipe{
+    padding-top: 20px;
+    padding-left: 30px; 
+}
+
+.image{
+    border-style: solid;
+    border-color: white;
+    border:2px 2px 2px 2px; 
+}
+
+.navigation-buttons{
+    margin-right: 10px;
+    margin-top: 10px;
+}

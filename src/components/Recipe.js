@@ -4,16 +4,19 @@ import {Card,Button} from 'react-bootstrap';
 
 function Recipe(props){
     return(
-        <div key={props.recipeId}>           
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.imgsrc} />
+        <div key={props.recipeId} className="recipe-card col-sm-12 col-md-6 col-lg-4">           
+            <Card bg="dark" text="white" style={{ width: '100%'}}>
+                <Card.Img variant="top" src={props.imgsrc}/>
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
-                    <Card.Subtitle>{props.publisher}</Card.Subtitle>
-                    <Button variant="primary"><Link to={{pathname: `/recipe/${props.recipeId}`,state:{id:props.recipeId}}}/>View Recipe</Button>
+                    <Card.Text>{props.publisher}</Card.Text>
+                    <div className="view-recipe-button">                    
+                        <Link to={{pathname: `/recipe/${props.recipeId}`,state:{id:props.recipeId}}}>
+                            <Button variant="primary">View Recipe</Button>
+                        </Link>
+                    </div>
                 </Card.Body>
-            </Card>
-                         
+            </Card>                         
         </div>
     );
 }
