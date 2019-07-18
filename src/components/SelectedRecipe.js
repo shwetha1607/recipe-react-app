@@ -31,11 +31,11 @@ class SelectedRecipe extends React.Component {
 
             return (
                 <div className="app">
-                    <div className="displayed-recipe">
+                    <div className="displayed-recipe col-lg-12 col-md-12 col-sm-12">
                         <div>
                             <h2>{this.state.json.title}</h2>
                             <h5>By {this.state.json.publisher}</h5>
-                            <img className="image" src={this.state.json.image_url} alt="Food" />
+                            <img className="image col-lg-12 col-md-12 col-sm-12" src={this.state.json.image_url} alt="Food" />
                             <div>
                                 <h7>Summary of preparation: </h7>
                                 <IngredientList list={this.state.json.ingredients} />
