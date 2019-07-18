@@ -15,7 +15,7 @@ class App extends React.Component{
   }
 
   async componentWillMount(){
-      console.log("Getting popular recipes",this.key);     
+      console.log("Getting popular recipes");     
       try{
           var res=await fetch("https://www.food2fork.com/api/search?key="+this.key+"&sort=r");
           var json = await res.json();
