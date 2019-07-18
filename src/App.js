@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
 import Content from './components/Content';
+import 'bootstrap/dist/css/bootstrap.css';
 
 class App extends React.Component{
 
@@ -8,8 +9,8 @@ class App extends React.Component{
   key_b="b0411751579e25ce6de6f05b965dba21";
   key_c="89bed7cf23be67af723ad893f9ac391f";
   key_d="a633711f01fe63ca20a580dcc42cd4eb";
-  key_e="84a3fbb67dd942e588d19e2c859a3230";
 
+  key="0e963d79063a037ddc16fafa055bf0ee";
   constructor(props){
     super(props);
     this.state={json:[]};
@@ -19,7 +20,7 @@ class App extends React.Component{
   async componentWillMount(){
       console.log("Getting popular recipes");     
       try{
-          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_d+"&sort=r");
+          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key+"&sort=r");
           var json = await res.json();
           console.log("json=======>",json);
           this.setState({json: json.recipes });
@@ -32,7 +33,7 @@ class App extends React.Component{
     console.log(searchWord);
     console.log("Getting popular recipes");     
       try{
-          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key_d+"&q="+searchWord);
+          var res=await fetch("https://www.food2fork.com/api/search?key="+this.key+"&q="+searchWord);
           var json = await res.json();
           console.log("json=======>",json);
           this.setState({json: json.recipes });

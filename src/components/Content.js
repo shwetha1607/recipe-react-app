@@ -8,11 +8,14 @@ function Content(props){
         if((props.recipeToRender).length!==0){
             console.log(props.recipeToRender);
             for(var i=0;i<10;i++){
-                elements.push(<Recipe
+                elements.push(
+                <Recipe
                     recipeId={props.recipeToRender[i].recipe_id}
                     title={props.recipeToRender[i].title} 
                     imgsrc={props.recipeToRender[i].image_url}
-                    />);
+                    publisher={props.recipeToRender[i].publisher}
+                    />
+                );
                 console.log(elements[i]);
             }
         }
