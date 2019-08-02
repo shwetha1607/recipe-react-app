@@ -12,7 +12,7 @@ function Recipe(props){
                     <Card.Text>{props.publisher}</Card.Text>
                     <div className="view-recipe-button">                    
                         <Link to={{pathname: `/recipe/${props.recipeId}`,state:{id:props.recipeId}}}>
-                            <Button variant="primary">View Recipe</Button>
+                            <Button variant="info">View Recipe</Button>
                         </Link>
                     </div>
                 </Card.Body>
